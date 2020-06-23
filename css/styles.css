@@ -17,13 +17,13 @@ body {
     rgba(0, 13, 60, 1) 100%
   );
   margin: 0;
-  font-family: 'TimeNewRoman', Sans-Serif;
+  font-family: 'Sriracha', cursive;
   color: #fff;
 }
 
 /* Typeography General*/
 h1 {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Sriracha', cursive;
   font-size: 3em;
   margin: 2em 1rem;
 }
@@ -32,13 +32,12 @@ h1 {
   h1 {
     font-size: 7em;
     margin: 2em 4rem 1em;
-    font-family: 'TimeNewRoman', Sans-Serif;
   }
 }
 
 h2 {
   border-bottom: 1px solid #cc1;
-  font-family: 'TimeNewRoman', Sans-Serif;
+  font-family: 'Oxygen', Sans-Serif;
   font-size: 3em;
   color: #fff;
 }
@@ -71,6 +70,7 @@ section {
   padding-left: 0;
   margin: 0;
   text-align: center;
+  color: black;
 }
 
 .navbar__menu li {
@@ -78,16 +78,16 @@ section {
   padding-left: 2%;
 }
 
-.navbar__menu .menu__link {
+.navbar__menu a {
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-  background: #c0c0c0;
-  color: #333;
+.navbar__menu a:hover {
+  background: #333;
+  color: #fff;
   transition: ease 0.3s all;
 }
 
@@ -116,7 +116,7 @@ section {
 /* Landing Container Styles */
 .landing__container {
   padding: 1em;
-  text-align: left;
+  text-align: center;
 }
 
 @media only screen and (min-width: 35em) {
@@ -129,10 +129,10 @@ section {
 section:nth-of-type(even) .landing__container {
   margin-right: 0;
   margin-left: auto;
-  text-align: right;
+  text-align: center;
 }
 
-/* Background Circles */
+/* Background Circles*/
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
 section:nth-of-type(odd) .landing__container::before {
@@ -209,11 +209,12 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
+  background-color: #cc1;
+  /* background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
 }
 
 section.your-active-class .landing__container::before {
@@ -225,7 +226,37 @@ section.your-active-class .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;
 }
+/***/
 
+#side-nav {
+  /* feel free to remove or change, only for testing */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px;
+}
+
+#side-nav a {
+  /* feel free to remove, only for testing */
+  text-decoration: none;
+  color: grey;
+  margin-right: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#side-nav a.active {
+  color: #000;
+  /* sets color for the default active class */
+}
+
+#content div {
+  min-height: 600px;
+  background-color: #cecece;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+  padding: 50px;
+}
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
   from {
